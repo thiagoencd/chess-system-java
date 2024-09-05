@@ -4,7 +4,7 @@ import boardgame.Board;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Bishop extends ChessPiece{
+public class Bishop extends ChessPiece {
 
 	public Bishop(Board board, Color color) {
 		super(board, color);
@@ -13,5 +13,11 @@ public class Bishop extends ChessPiece{
 	@Override
 	public String toString() {
 		return "B";
+	}
+
+	@Override
+	public boolean[][] possibleMoves() {
+		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		return mat;
 	}
 }
