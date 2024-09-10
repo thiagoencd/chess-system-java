@@ -10,6 +10,7 @@ import boardgame.Position;
 import chess.pieces.Bishop;
 import chess.pieces.King;
 import chess.pieces.Knight;
+import chess.pieces.Pawn;
 import chess.pieces.Queen;
 import chess.pieces.Rook;
 
@@ -224,9 +225,10 @@ public class ChessMatch {
 		placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
 		placeNewPiece('f', 1, new Bishop(board, Color.WHITE));
 
-		/*
-		 * for (char c = 'a'; c <= 'h'; c++) { placeNewPiece(c, 7, new Pawn(board,
-		 * Color.BLACK)); placeNewPiece(c, 2, new Pawn(board, Color.WHITE)); }
-		 */
+		for (char c = 'a'; c <= 'h'; c++) {
+			placeNewPiece(c, 7, new Pawn(board, Color.BLACK));
+			placeNewPiece(c, 2, new Pawn(board, Color.WHITE));
+		}
+
 	}
 }
