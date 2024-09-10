@@ -225,10 +225,10 @@ public class ChessMatch {
 		placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
 		placeNewPiece('f', 1, new Bishop(board, Color.WHITE));
 
-		for (char c = 'a'; c <= 'h'; c++) {
+		/*for (char c = 'a'; c <= 'h'; c++) {
 			placeNewPiece(c, 7, new Pawn(board, Color.BLACK));
 			placeNewPiece(c, 2, new Pawn(board, Color.WHITE));
-		}
+		}*/
 
 	}
 }
