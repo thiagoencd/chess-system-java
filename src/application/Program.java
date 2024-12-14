@@ -22,15 +22,15 @@ public class Program {
 
 			try {
 				UI.clearScreen();
-				UI.printMatch(chessMatch,captured);
+				UI.printMatch(chessMatch, captured);
 
 				System.out.println();
 				System.out.println("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
-				
-				boolean [][] possibleMoves = chessMatch.possibleMoves(source);
+
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
-				UI.printBoard(chessMatch.getPieces(),possibleMoves);
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
 				System.out.println();
 				System.out.println("Target: ");
@@ -40,10 +40,14 @@ public class Program {
 				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
-				
-				if(chessMatch.getPromoted() != null) {
+
+				if (chessMatch.getPromoted() != null) {
 					System.out.println("Enter piece for promotion (B/N/Q/R)");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+						System.out.println("Invalid value! Enter piece for promotion (B/N/Q/R)");
+						type = sc.nextLine().toUpperCase();
+					}
 					chessMatch.replacePromotedPiece(type);
 				}
 
